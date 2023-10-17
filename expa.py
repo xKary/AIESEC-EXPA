@@ -1,6 +1,8 @@
 import constant as con
 import requests
 import random
+import string
+import json
 
 class Person:
     # Constructor de la clase 'Person' para inicializar los atributos de una persona.
@@ -27,7 +29,7 @@ class Person:
     def generate_password(self, length=8):
         lowercase = [random.choice(string.ascii_lowercase) for _ in range(length)]
         uppercase = [random.choice(string.ascii_uppercase) for _ in range(length)]
-        digits = [random.choice(string.digits) for _ in range(length]
+        digits = [random.choice(string.digits) for _ in range(length)]
 
         password_list = lowercase + uppercase + digits
         random.shuffle(password_list)
@@ -35,7 +37,7 @@ class Person:
         return ''.join(password_list)
 
     # Método para convertir los datos de la persona a formato JSON.
-    def to_json(self):
+    def get_json(self):
         # Generar un diccionario con los datos de la persona.
         user_data = {
             'user': {
@@ -53,12 +55,13 @@ class Person:
                 'selected_programmes': self.selected_programmes
             }
         }
+        print(user_data)
         return user_data
     
     # Método para registrar al usuario realizando una solicitud POST.
     def register_user(self):
         # Realizar la solicitud POST para registrar al usuario.
-        response = requests.post(con.URL, json=self.to_json())
+        response = requests.post(con.URL, json=self.get_json())
 
         # Verificar el estado de la respuesta.
         if response.status_code == 201:
