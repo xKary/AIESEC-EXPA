@@ -1,6 +1,6 @@
 # Actualiza los valores por los de tu entidad
 MC_ID = 000
-COUNTRY_CODE = +00
+COUNTRY_CODE = "+00"
 
 # Reemplazar por los ids de los LCs de tu entidad
 LCS_ID = {
