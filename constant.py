@@ -10,5 +10,5 @@ LCS_ID = {
       'Guanajuato': 940,
        # ...
     }
-# URL de la API de autenticación de AIESEC para registrar usuarios
-URL = "https://auth.aiesec.org/users.json"
+# URL de la API de autenticación de AIESEC para registrar usuarios (Actualizar)
+URL = http...
